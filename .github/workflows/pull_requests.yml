@@ -1,0 +1,14 @@
+name: PRs checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup-image:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build setup image
+        run: make build

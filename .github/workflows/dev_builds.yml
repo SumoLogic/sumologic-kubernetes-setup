@@ -1,0 +1,21 @@
+name: Dev builds
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  setup-image:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build setup image
+        run: make build
+      - name: Login to AWS public ECR
+        run: make login
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_PUBLIC_ECR_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_PUBLIC_ECR_SECRET_ACCESS_KEY }}
+      - name: Push setup image
+        run: make push

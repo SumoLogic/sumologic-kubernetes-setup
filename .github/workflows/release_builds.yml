@@ -1,0 +1,29 @@
+name: Release builds
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'v[0-9]+.[0-9]+.[0-9]+-alpha.[0-9]+'
+      - 'v[0-9]+.[0-9]+.[0-9]+-beta.[0-9]+'
+      - 'v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+'
+
+jobs:
+  setup-image:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Extract tag
+        id: extract_tag
+        run: echo "::set-output name=tag::$(echo ${GITHUB_REF#refs/tags/v})"
+      - name: Print tag
+        run: echo "Running release build for ${{ steps.extract_tag.outputs.tag }}"
+      - name: Build kubernetes-setup
+        run: make build BUILD_TAG=${{ steps.extract_tag.outputs.tag }}
+      - name: Login to AWS public ECR
+        run: make login
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_PUBLIC_ECR_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_PUBLIC_ECR_SECRET_ACCESS_KEY }}
+      - name: Push kubernetes-setup image
+        run: make push BUILD_TAG=${{ steps.extract_tag.outputs.tag }}

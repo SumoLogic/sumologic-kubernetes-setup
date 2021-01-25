@@ -1,12 +1,15 @@
-FROM alpine:3.12
+FROM alpine:3.13
 
-ENV TERRAFORM_VERSION=0.12.25-r0
+ENV TERRAFORM_VERSION=0.13.6
 
 RUN apk add --no-cache \
         bash \
         curl \
         jq \
-        terraform=${TERRAFORM_VERSION} \
+ && curl -o terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
+ && unzip terraform.zip \
+ && mv terraform /usr/local/bin/ \
+ && rm terraform.zip \
  # ping group has a conflicting id: 999 so delete it
  && delgroup ping \
  && addgroup -g 999 setup \
@@ -16,7 +19,7 @@ RUN apk add --no-cache \
 
 USER setup
 RUN cd /terraform/ \
- && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/v2.0.0/deploy/helm/sumologic/conf/setup/main.tf \
+ && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/11748f1b1481db28e6e451015031bb64f43216a3/deploy/helm/sumologic/conf/setup/main.tf \
  && terraform init \
  && rm main.tf
 

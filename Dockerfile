@@ -20,7 +20,7 @@ RUN apk add --no-cache \
 
 USER setup
 RUN cd /terraform/ \
- && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/11748f1b1481db28e6e451015031bb64f43216a3/deploy/helm/sumologic/conf/setup/main.tf \
+ && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/7aeb5014aad04c21a21fea2d88e35600da6818eb/deploy/helm/sumologic/conf/setup/main.tf \
  && terraform init \
  && rm main.tf
 

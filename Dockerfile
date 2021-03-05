@@ -6,6 +6,7 @@ RUN apk add --no-cache \
         bash \
         curl \
         jq \
+ && apk upgrade \
  && curl -o terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
  && unzip terraform.zip \
  && mv terraform /usr/local/bin/ \

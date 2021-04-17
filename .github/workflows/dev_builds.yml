@@ -10,12 +10,22 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - name: Build setup image
-        run: make build
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Show Buildx platforms
+        run: echo ${{ steps.buildx.outputs.platforms }}
+
       - name: Login to AWS public ECR
         run: make login
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_PUBLIC_ECR_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_PUBLIC_ECR_SECRET_ACCESS_KEY }}
-      - name: Push setup image
-        run: make push
+
+      - name: Build and push image
+        run: make build-push-multiplatform

@@ -18,3 +18,11 @@ push:
 login:
 	aws ecr-public get-login-password --region us-east-1 \
 	| docker login --username AWS --password-stdin $(ECR_URL)
+
+build-push-multiplatform:
+	docker buildx build \
+		--push \
+		--platform linux/amd64,linux/arm/v7,linux/arm64 \
+		--build-arg BUILD_TAG=$(BUILD_TAG) \
+		--tag $(REPO_URL):$(BUILD_TAG) \
+		.

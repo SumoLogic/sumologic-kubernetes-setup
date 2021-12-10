@@ -24,6 +24,6 @@ build-push-multiplatform:
 		--push \
 		--platform linux/amd64,linux/arm/v7,linux/arm64 \
 		--build-arg BUILD_TAG=$(BUILD_TAG) \
-		--tag $(OPENSOURCE_REPO_URL):$(BUILD_TAG) \
+		--tag $(REPO_URL):$(BUILD_TAG) \
 		.
 

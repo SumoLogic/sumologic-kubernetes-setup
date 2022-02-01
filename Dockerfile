@@ -1,7 +1,7 @@
 FROM alpine:3.15
 
 ENV TERRAFORM_VERSION=1.1.3
-ENV COLLECTION_VERSION=2.3.2
+ENV COLLECTION_VERSION=cccc73323e15be876a14b41db0b51183b7a029ea
 ARG TARGETPLATFORM
 
 RUN apk add --no-cache \
@@ -26,7 +26,7 @@ RUN apk add --no-cache \
 
 USER setup
 RUN cd /terraform/ \
- && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/v${COLLECTION_VERSION}/deploy/helm/sumologic/conf/setup/main.tf \
+ && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/${COLLECTION_VERSION}/deploy/helm/sumologic/conf/setup/main.tf \
  && terraform init \
  && rm main.tf
 

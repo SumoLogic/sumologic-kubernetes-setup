@@ -7,11 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-- chore: bump terraform to 1.1.4 [#25]
 - chore: update collection to 2.4.1 [#27]
 
-[#25]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/25
 [#27]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/27
+
+## [v3.2.1] - 2022-02-01
+
+- chore: bump terraform to 1.1.4 [#25]
+- chore: bump collection's main.tf [#26]
+
+[v3.2.1]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.2.1
+[#25]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/25
+[#26]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/26
 
 ## [v3.2.0] - 2022-01-11
 

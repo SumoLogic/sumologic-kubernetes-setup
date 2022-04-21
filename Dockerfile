@@ -2,12 +2,14 @@ FROM alpine:3.15
 
 ENV TERRAFORM_VERSION=1.1.4
 ENV COLLECTION_VERSION=v2.4.1
+ENV MONITORS_VERSION=be74295483f766f2fc6dd916b429b372a5655bd3
 ARG TARGETPLATFORM
 
 RUN apk add --no-cache \
         bash \
         curl \
         jq \
+        git \
  && apk upgrade \
  && if [ "${TARGETPLATFORM}" = "linux/amd64" ]; then TERRAFORM_PLATFORM="linux_amd64"; fi; \
     if [ "${TARGETPLATFORM}" = "linux/arm/v7" ]; then TERRAFORM_PLATFORM="linux_arm"; fi; \
@@ -21,14 +23,21 @@ RUN apk add --no-cache \
  && delgroup ping \
  && addgroup -g 999 setup \
  && adduser -u 999 -D -G setup setup \
- && mkdir /terraform /scripts \
- && chown -R setup:setup /terraform /scripts
+ && mkdir /terraform /scripts /monitors \
+ && chown -R setup:setup /terraform /scripts /monitors
 
 USER setup
 RUN cd /terraform/ \
  && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/${COLLECTION_VERSION}/deploy/helm/sumologic/conf/setup/main.tf \
  && terraform init \
  && rm main.tf
+RUN cd /monitors/ \
+ && git clone https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor.git \
+ && cd terraform-sumologic-sumo-logic-monitor \
+ && git checkout ${MONITORS_VERSION} \
+ && cd .. \
+ && cp terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/* . \
+ && rm -rf terraform-sumologic-sumo-logic-monitor
 
 ARG BUILD_TAG=latest
 ENV TAG=$BUILD_TAG

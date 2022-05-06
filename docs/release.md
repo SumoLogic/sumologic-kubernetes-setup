@@ -14,4 +14,7 @@ Perform the following steps in order to release new verions of Sumologic Kuberne
    git push origin "v${TAG}"
    ```
 
+1. Update [releases] page
+
 [changelog]: ../../CHANGELOG.md
+[releases]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases

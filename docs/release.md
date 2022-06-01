@@ -1,4 +1,4 @@
-# Releasing guide
+# Release guide
 
 Perform the following steps in order to release new verions of Sumologic Kubernetes Setup.
 

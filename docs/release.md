@@ -1,6 +1,6 @@
 # Release guide
 
-Perform the following steps in order to release new verions of Sumologic Kubernetes Setup.
+Perform the following steps in order to release a new version of Sumologic Kubernetes Setup.
 
 1. Prepare and merge PR with the following changes:
 

@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+- chore: upgrade sumologic provider to 2.18 [#42]
+- chore: upgrade terraform to 1.2.7 [#42]
+
+[#42]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/42
+
 ## [v3.3.0] - 2022-05-11
 
 - add k8s monitors to the setup docker [#32] [#33]

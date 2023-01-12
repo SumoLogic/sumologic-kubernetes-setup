@@ -37,6 +37,7 @@ RUN cd /monitors/ \
  && git checkout ${MONITORS_VERSION} \
  && cd .. \
  && cp terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/* . \
+ && terraform init -input=false || terraform init -input=false -upgrade \
  && rm -rf terraform-sumologic-sumo-logic-monitor
 
 ARG BUILD_TAG=latest

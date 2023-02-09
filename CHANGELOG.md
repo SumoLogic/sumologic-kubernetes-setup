@@ -5,10 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [v3.6.0] - 2023-02-09
 
 - chore: update Terraform to 1.3.7 [#56]
 
+[v3.6.0]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.6.0
 [#56]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/56
 
 ## [v3.5.0] - 2023-01-12

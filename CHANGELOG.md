@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.10.0] - 2023-09-07
+
+- chore: update Alpine from 3.18.2 to 3.18.3 [#75]
+
+[v3.10.0]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.10.0
+[#75]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/75
+
 ## [v3.9.0] - 2023-05-22
 
 - chore: update Terraform to 1.5.1 [#70]

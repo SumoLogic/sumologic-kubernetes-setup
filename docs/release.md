@@ -16,5 +16,5 @@ Perform the following steps in order to release a new version of Sumologic Kuber
 
 1. Update [releases] page
 
-[changelog]: ../../CHANGELOG.md
+[changelog]: ../CHANGELOG.md
 [releases]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases

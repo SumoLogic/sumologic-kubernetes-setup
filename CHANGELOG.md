@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.12.0] - 2024-03-06
+
+- chore: upgrade Sumo Logic Terraform Provider to 2.28.3 [#88]
+- build(deps): update Alpine from 3.18.4 to 3.19.1 [#84] [#85] [#86]
+
+[#84]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/84
+[#85]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/85
+[#86]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/86
+[#88]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/88
+[v3.12.0]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.12.0
+
 ## [v3.11.0] - 2023-10-13
 
 - chore: update Alpine from 3.18.3 to 3.18.4 [#82]

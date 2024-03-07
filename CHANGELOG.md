@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.12.1] - 2024-03-07
+
+- chore: upgrade Terraform binary from 1.5.1 to 1.7.4 [#90]
+
+[#90]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/90
+[v3.12.1]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.12.1
+
 ## [v3.12.0] - 2024-03-06
 
 - chore: upgrade Sumo Logic Terraform Provider to 2.28.3 [#88]

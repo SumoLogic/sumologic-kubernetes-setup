@@ -37,5 +37,17 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+      - name: Login to Docker Hub
+        run: |
+          docker login \
+            --username ${{ secrets.DOCKERHUB_LOGIN }} \
+            --password ${{ secrets.DOCKERHUB_PASSWORD }}
+
       - name: Build and push image to Open Source ECR
         run: make build-push-multiplatform BUILD_TAG=${{ steps.extract_tag.outputs.tag }}
+
+      - name: Build and push image to Docker Hub
+        run: |-
+          make build-push-multiplatform \
+          BUILD_TAG=${{ steps.extract_tag.outputs.tag }} \
+          REPO_URL=sumologic/sumologic-otel-collector

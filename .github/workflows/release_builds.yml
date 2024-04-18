@@ -50,4 +50,4 @@ jobs:
         run: |-
           make build-push-multiplatform \
           BUILD_TAG=${{ steps.extract_tag.outputs.tag }} \
-          REPO_URL=sumologic/sumologic-otel-collector
+          REPO_URL=sumologic/kubernetes-setup

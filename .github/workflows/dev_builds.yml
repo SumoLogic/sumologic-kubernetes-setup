@@ -39,4 +39,4 @@ jobs:
       - name: Build and push image to Docker Hub
         run: |-
           make build-push-multiplatform \
-          REPO_URL=sumologic/sumologic-otel-collector
+          REPO_URL=sumologic/kubernetes-setup

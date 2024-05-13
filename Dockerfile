@@ -1,6 +1,7 @@
+FROM hashicorp/terraform:1.8.1 as terraform
+
 FROM alpine:3.19.1
 
-ENV TERRAFORM_VERSION=1.8.1
 ENV COLLECTION_VERSION=v4.6.1
 ENV MONITORS_VERSION=v1.2.4
 ARG TARGETPLATFORM
@@ -11,20 +12,14 @@ RUN apk add --no-cache \
         jq \
         git \
  && apk upgrade \
- && if [ "${TARGETPLATFORM}" = "linux/amd64" ]; then TERRAFORM_PLATFORM="linux_amd64"; fi; \
-    if [ "${TARGETPLATFORM}" = "linux/arm/v7" ]; then TERRAFORM_PLATFORM="linux_arm"; fi; \
-    if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then TERRAFORM_PLATFORM="linux_arm64"; fi; \
-    if [ "${TERRAFORM_PLATFORM}" = "" ]; then TERRAFORM_PLATFORM="${TARGETPLATFORM}"; fi \
- && curl -o terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_${TERRAFORM_PLATFORM}.zip \
- && unzip terraform.zip \
- && mv terraform /usr/local/bin/ \
- && rm terraform.zip \
  # ping group has a conflicting id: 999 so delete it
  && delgroup ping \
  && addgroup -g 999 setup \
  && adduser -u 999 -D -G setup setup \
  && mkdir /terraform /scripts /monitors \
  && chown -R setup:setup /terraform /scripts /monitors
+
+COPY --from=terraform /bin/terraform /usr/local/bin/terraform
 
 USER setup
 RUN cd /terraform/ \

@@ -1,6 +1,6 @@
 FROM hashicorp/terraform:1.8.3 as terraform
 
-FROM alpine:3.19.1
+FROM alpine:3.20.0
 
 ENV COLLECTION_VERSION=v4.6.1
 ENV MONITORS_VERSION=v1.2.4

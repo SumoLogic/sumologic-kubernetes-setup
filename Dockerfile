@@ -1,4 +1,4 @@
-FROM hashicorp/terraform:1.8.3 as terraform
+FROM hashicorp/terraform:1.8.4 as terraform
 
 FROM alpine:3.20.0
 

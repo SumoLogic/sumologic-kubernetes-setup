@@ -12,10 +12,8 @@ RUN apk add --no-cache \
         jq \
         git \
  && apk upgrade \
- # ping group has a conflicting id: 999 so delete it
- && delgroup ping \
- && addgroup -g 999 setup \
- && adduser -u 999 -D -G setup setup \
+ && addgroup -g 1000 setup \
+ && adduser -u 1000 -D -G setup setup \
  && mkdir /terraform /scripts /monitors \
  && chown -R setup:setup /terraform /scripts /monitors
 

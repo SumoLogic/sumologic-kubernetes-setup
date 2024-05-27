@@ -36,15 +36,5 @@ RUN cd /monitors/ \
  ARG BUILD_TAG=latest
  ENV TAG=$BUILD_TAG
  
- LABEL name="Sumo Logic Kubernetes Setup" \
-     vendor="Sumo Logic" \
-     version="${BUILD_TAG}" \
-     release="1" \
-     summary="$SUMMARY" \
-     description="$DESCRIPTION" \
-     maintainer="opensource-collection-team@sumologic.com"
- 
- ADD LICENSE \
-     /licenses/LICENSE
 
 WORKDIR /terraform/

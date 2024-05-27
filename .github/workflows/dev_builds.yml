@@ -52,6 +52,6 @@ jobs:
         run: |-
           make build-push-multiplatform \
           REPO_URL=sumologic/kubernetes-setup \
-          DOCKERFILE=Dockerfile-ubi 
+          DOCKERFILE=Dockerfile-ubi \
           TAG_SUFFIX=-ubi \
           PLATFORMS=linux/amd64,linux/arm64

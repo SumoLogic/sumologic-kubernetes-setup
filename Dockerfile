@@ -35,6 +35,5 @@ RUN cd /monitors/ \
 
  ARG BUILD_TAG=latest
  ENV TAG=$BUILD_TAG
- 
 
 WORKDIR /terraform/

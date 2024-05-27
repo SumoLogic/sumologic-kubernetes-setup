@@ -12,10 +12,8 @@ RUN apk add --no-cache \
         jq \
         git \
  && apk upgrade \
- # ping group has a conflicting id: 999 so delete it
- && delgroup ping \
- && addgroup -g 999 setup \
- && adduser -u 999 -D -G setup setup \
+ && addgroup -g 1000 setup \
+ && adduser -u 1000 -D -G setup setup \
  && mkdir /terraform /scripts /monitors \
  && chown -R setup:setup /terraform /scripts /monitors
 
@@ -35,7 +33,7 @@ RUN cd /monitors/ \
  && terraform init -input=false || terraform init -input=false -upgrade \
  && rm -rf terraform-sumologic-sumo-logic-monitor
 
-ARG BUILD_TAG=latest
-ENV TAG=$BUILD_TAG
+ ARG BUILD_TAG=latest
+ ENV TAG=$BUILD_TAG
 
 WORKDIR /terraform/

@@ -4,6 +4,7 @@ ECR_URL = public.ecr.aws/sumologic
 REPO_URL = $(ECR_URL)/$(IMAGE_NAME)
 DOCKERFILE = Dockerfile
 TAG_SUFFIX = ""
+PLATFORMS = linux/amd64,linux/arm/v7,linux/arm64
 
 build:
 	DOCKER_BUILDKIT=1 docker build \
@@ -26,7 +27,7 @@ build-push-multiplatform:
 	docker buildx build \
 		-f $(DOCKERFILE) \
 		--push \
-		--platform linux/amd64,linux/arm/v7,linux/arm64 \
+		--platform $(PLATFORMS) \
 		--build-arg BUILD_TAG=$(BUILD_TAG)$(TAG_SUFFIX) \
 		--tag $(REPO_URL):$(BUILD_TAG)$(TAG_SUFFIX) \
 		.

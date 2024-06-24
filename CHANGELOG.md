@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.15.0] - 2024-06-24
+
+- build(deps): bump alpine from 3.19.1 to 3.20.1 [#103], [#108]
+- build(deps): bump hashicorp/terraform from 1.8.3 to 1.8.5 [#102], [#107]
+- build(deps): bump ubi8/ubi from 8.4 to 8.10 [#106]
+- feat: build ubi image [#104], [#105]
+
+[#102]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/102
+[#103]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/103
+[#104]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/104
+[#105]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/105
+[#106]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/106
+[#107]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/107
+[#108]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/108
+[v3.15.0]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.15.0
+
 ## [v3.14.0] - 2024-05-13
 
 - chore: upgrade Terraform binary from 1.8.1 to 1.8.3 [#100]

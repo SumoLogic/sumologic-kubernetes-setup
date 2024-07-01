@@ -10,6 +10,8 @@ Perform the following steps in order to release a new version of Sumologic Kuber
 
    ```bash
    export TAG=x.y.z
+   git checkout main
+   git pull
    git tag -sm "v${TAG}" "v${TAG}"
    git push origin "v${TAG}"
    ```

@@ -7,10 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v3.15.1] - 2024-07-01
 
-This version builds new docker images to include Terraform provider for Sumo Logic [v2.31.0][provider_v2.31.0]
+- chore: use the latest providers files for chart and monitors [#112]
 
 [v3.15.1]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.15.1
-[provider_v2.31.0]: https://github.com/SumoLogic/terraform-provider-sumologic/releases/tag/v2.31.0
+[#112]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/112
 
 ## [v3.15.0] - 2024-06-24
 

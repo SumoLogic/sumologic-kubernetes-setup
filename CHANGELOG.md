@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.17.0] - 2025-05-30
+
+- fix: Dockerfile to reduce vulnerabilities [#145]
+- build(deps): bump hashicorp/terraform from 1.9.7 to 1.10.5 [#146]
+
+[v3.17.0]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.17.0
+[#145]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/145
+[#146]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/146
+
 ## [v3.16.0] - 2024-10-09
 
 - fix: Dockerfile to reduce vulnerabilities [#126]

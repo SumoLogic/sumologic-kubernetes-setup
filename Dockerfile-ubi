@@ -25,7 +25,7 @@ COPY --from=terraform /bin/terraform /usr/local/bin/terraform
 
 USER setup
 RUN cd /terraform/ \
-    && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/${COLLECTION_VERSION}/deploy/helm/sumologic/conf/setup/main.tf \
+    && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/heads/bump-terraform/deploy/helm/sumologic/conf/setup/main.tf \
     && terraform init \
     && rm main.tf
 RUN cd /monitors/ \

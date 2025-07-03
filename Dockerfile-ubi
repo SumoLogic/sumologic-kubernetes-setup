@@ -1,6 +1,6 @@
 FROM hashicorp/terraform:1.12.2 AS terraform
 
-FROM registry.access.redhat.com/ubi9/ubi:9.6-1751445649
+FROM registry.access.redhat.com/ubi9/ubi:9.6
 
 ENV SUMMARY="UBI based Sumo Logic Kubernetes Setup" \
     DESCRIPTION="UBI based setup image for the Sumo Logic Kubernetes Collection"
@@ -11,7 +11,8 @@ ARG TARGETPLATFORM
 
 
 RUN dnf update -y  \
-    && dnf install -y  \
+    && dnf install -y --allowerasing \
+    curl-full libcurl-full \
     bash \
     jq \
     git \

@@ -1,9 +1,9 @@
-FROM hashicorp/terraform:1.10.5 as terraform
+FROM hashicorp/terraform:1.12.2 AS terraform
 
 FROM alpine:3.21.3
 
-ENV COLLECTION_VERSION=5577707ce153198a2dacbdfc6baa8db349cac944
-ENV MONITORS_VERSION=v1.2.5
+ENV COLLECTION_VERSION=bb30168bb695e3cb8a4051e631f623e622be68e5
+ENV MONITORS_VERSION=v1.2.7
 ARG TARGETPLATFORM
 
 RUN apk add --no-cache \
@@ -21,7 +21,7 @@ COPY --from=terraform /bin/terraform /usr/local/bin/terraform
 
 USER setup
 RUN cd /terraform/ \
-        && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/${COLLECTION_VERSION}/deploy/helm/sumologic/conf/setup/main.tf \
+        && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/"${COLLECTION_VERSION}"/deploy/helm/sumologic/conf/setup/main.tf \
         && terraform init \
         && rm main.tf
 RUN cd /monitors/ \

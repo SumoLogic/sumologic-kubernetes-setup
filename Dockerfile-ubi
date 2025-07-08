@@ -27,6 +27,8 @@ COPY --from=terraform /bin/terraform /usr/local/bin/terraform
 USER setup
 RUN cd /terraform/ \
     && curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-kubernetes-collection/refs/heads/bump-terraform/deploy/helm/sumologic/conf/setup/main.tf \
+    && cat main.tf \
+    && rm -rf ~/.terraform.d/plugins \
     && terraform init -input=false -upgrade \
     && rm main.tf
 RUN cd /monitors/ \

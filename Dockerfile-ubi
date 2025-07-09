@@ -1,6 +1,6 @@
 FROM hashicorp/terraform:1.10.5 as terraform
 
-FROM registry.access.redhat.com/ubi8/ubi:8.10
+FROM registry.access.redhat.com/ubi8/ubi:8.10-1304.1751400627-1304.1751400627
 
 ENV SUMMARY="UBI based Sumo Logic Kubernetes Setup" \
     DESCRIPTION="UBI based setup image for the Sumo Logic Kubernetes Collection"

@@ -5,7 +5,7 @@ FROM registry.access.redhat.com/ubi8/ubi:8.10
 ENV SUMMARY="UBI based Sumo Logic Kubernetes Setup" \
     DESCRIPTION="UBI based setup image for the Sumo Logic Kubernetes Collection"
 
-ENV COLLECTION_VERSION=v4.6.1
+ENV COLLECTION_VERSION=v4.27.1
 ENV MONITORS_VERSION=v1.2.4
 ARG TARGETPLATFORM
 

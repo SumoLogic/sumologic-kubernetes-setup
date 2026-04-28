@@ -12,7 +12,6 @@ ARG TARGETPLATFORM
 RUN dnf update -y \
     && dnf install -y \
     bash \
-    curl \
     jq \
     git \
     && dnf clean all \

@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.18.0] - 2026-04-28
+
+- chore: upgrade collector version to latest [#183]
+- chore: bump UBI base image from 8.10 to 9.7 [#182]
+- build(deps): bump hashicorp/terraform from 1.10.5 to 1.14.4 [#181]
+- build(deps): bump alpine from 3.21.3 to 3.23.3 [#180]
+- build(deps): bump docker/setup-buildx-action from 3.4.0 to 3.12.0 [#179]
+- build(deps): bump actions/checkout from 4 to 6 [#172]
+- build(deps): bump docker/setup-qemu-action from 3.1.0 to 3.7.0 [#170]
+
+[v3.18.0]: https://github.com/SumoLogic/sumologic-kubernetes-setup/releases/v3.18.0
+[#183]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/183
+[#182]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/182
+[#181]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/181
+[#180]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/180
+[#179]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/179
+[#172]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/172
+[#170]: https://github.com/SumoLogic/sumologic-kubernetes-setup/pull/170
+
 ## [v3.17.0] - 2025-05-30
 
 - fix: Dockerfile to reduce vulnerabilities [#145]
